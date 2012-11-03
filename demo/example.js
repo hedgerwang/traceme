@@ -1,4 +1,3 @@
-
 /**
  * comment 
  */
@@ -13,7 +12,7 @@ var anonymousFunction = function (a, b, c) {
 
 var obj = {
   namedMethod : function method(a, b, c) {
-    return this.throwAErrorNow();
+    return this.throwAnError();
   }
 };
 
