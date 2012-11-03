@@ -34,7 +34,7 @@ function traverse(object, path, state) {
 
 function visitFunction(traverse, object, path, state) {
   catchup(object.body.range[0] + 1, state);
-  state.g.buffer += __TRACE__ + ';\n';
+  state.g.buffer += __TRACE__ + ';';
   return false;
 }
 
@@ -181,7 +181,7 @@ function endsWith(str, suffix) {
 
 function showUsage() {
   console.log('Usage:');
-  console.log('   node bin/injector.js demo/example.js > demo/example_traced.js')
+  console.log('   node bin/injector.js demo/example.js > demo/example.trace.js')
 }
 
 function main() {
