@@ -16,7 +16,7 @@ Usage
      npm install esprima
 
      # Inject JS expression __TRACE__ to every JS function.
-     node bin/injector.js demo/example.js > demo/example_traced.js
+     node bin/injector.js demo/example.js > demo/example.trace.js
 
 
 Why need this?
@@ -59,7 +59,7 @@ The  variable `__TRACE__` is expected to be a global variable that you should ha
 
     var __TRACE__; // declare at global scope.
    
-Injecting the expression `__TRACE__` to every function with **traceme** shouldn't change the behavior of the existing functions except that those functions runtime may need to spend a very little more time on resolving the global variable  `__TRACE__`.
+Injecting the expression `__TRACE__` to every function with **traceme** shouldn't change the behavior of the existing functions except that those functions may need to spend a very little more time on resolving the global variable  `__TRACE__` at runtime.
 
 The next thing we want to do is to track the function that is being executed. Since JavaScript is single threaded, knowing the current running function can help you to identify the source of the JS error a lot.
 
